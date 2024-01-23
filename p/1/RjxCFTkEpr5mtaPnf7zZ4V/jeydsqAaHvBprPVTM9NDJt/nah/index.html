@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="5; url=chrome://newtab">
+    <title>Script is Disabled</title>
+    <noscript>
+        <meta http-equiv="refresh" content="0;url=https://znqkl.github.io/">
+    </noscript>
+    <meta http-equiv="refresh" content="5;url=https://znqkl.github.io/">
+    <style>
+        h4 {
+            bottom: 20px;
+            right: 20px;
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function updateCountdown() {
+            var timerElement = document.getElementById('timer');
+            var seconds = parseInt(timerElement.textContent);
+
+            if (seconds > 0) {
+            seconds--;
+            timerElement.textContent = seconds;
+            } else {
+            alert('bye mothafacka');
+            }
+        }
+
+        var countdownInterval = setInterval(updateCountdown, 1000);
+
+        setTimeout(function() {
+            clearInterval(countdownInterval);
+            document.getElementById('countdown').innerHTML = 'bye mothafacka';
+        }, 5000);
+    </script>
+    <h1>what u doin? Seriously bro. 🤨🤨🤨 what u doin? Seriously bro. 🤨🤨🤨</h1>
+    <h1>what u doin? Seriously bro. 🤨🤨🤨 what u doin? Seriously bro. 🤨🤨🤨</h1>
+    <h1>what u doin? Seriously bro. 🤨🤨🤨 what u doin? Seriously bro. 🤨🤨🤨</h1>
+    <h1>what u doin? Seriously bro. 🤨🤨🤨 what u doin? Seriously bro. 🤨🤨🤨</h1>
+    <h1>what u doin? Seriously bro. 🤨🤨🤨 what u doin? Seriously bro. 🤨🤨🤨</h1>
+    <h1>what u doin? Seriously bro. 🤨🤨🤨 what u doin? Seriously bro. 🤨🤨🤨</h1>
+    <h4>redirecting in <span id="timer">5</span>secs </h4>
+    <img src="https://media1.tenor.com/m/QA6mPKs100UAAAAC/caught-in.gif"><img src="https://media1.tenor.com/m/v1hEPTpixqgAAAAC/get-out-of-here-get-outta-here.gif">
+    <script>
+        document.body.style.display = "block";
+
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+        function ctrlShiftKey(e, keyCode) {
+            return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
+        }
+
+        document.onkeydown = (e) => {
+        if (
+            event.keyCode === 123 ||
+            ctrlShiftKey(e, 'I') ||
+            ctrlShiftKey(e, 'J') ||
+            ctrlShiftKey(e, 'C') ||
+            (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0))
+        )
+            return false;
+        };
+
+        function isDevToolsOpened() {
+        if (
+            window.outerWidth - window.innerWidth > 200 ||
+            window.outerHeight - window.innerHeight > 200
+        ) {
+            return true;
+        } else {
+            return false;
+        }
+        }
+
+        window.addEventListener('resize', function () {
+        if (isDevToolsOpened()) {
+            var destinationURL = 'https://znqkl.github.io/';
+
+            window.location.href = destinationURL;
+        }
+        });
+
+        if (isDevToolsOpened()) {
+            var destinationURL = 'https://znqkl.github.io/';
+
+            window.location.href = destinationURL;       
+        }
+
+    </script>
+</body>
+</html>
