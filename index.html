@@ -18,7 +18,7 @@
         
         var viewportMetaTag = document.querySelector('meta[name="viewport"]');
         if (viewportMetaTag) {
-          viewportMetaTag.content = 'width=device-width, initial-scale=' + scale;
+          viewportMetaTag.content = 'width=device-width, initial-scale=' + scale + ', user-scalable=no';
         }
       }
 
