@@ -8,7 +8,22 @@
     <noscript>
       <meta http-equiv="refresh" content="0;url=p/1/RjxCFTkEpr5mtaPnf7zZ4V/jeydsqAaHvBprPVTM9NDJt/nah">
     </noscript>
-    <title>Sytrax</title>
+    <title>Znqkl</title>
+    <link rel="manifest" href="p/1/app/manifest.json" />
+    <script>
+      function setViewport() {
+        var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+        var viewportMetaTag = document.querySelector('meta[name="viewport"]');
+        
+        var scale = viewportWidth / 800;
+        
+        if (viewportMetaTag) {
+          viewportMetaTag.content = 'width=device-width, initial-scale=' + scale;
+        }
+      }
+
+      window.onload = window.onresize = setViewport;
+    </script>
     <style>
       body {
         margin: 0;
