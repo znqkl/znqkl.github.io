@@ -13,19 +13,16 @@
     <script>
       function setViewport() {
         var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-        var currentScale = parseFloat(document.querySelector('meta[name="viewport"]').content.match(/initial-scale=([\d.]+)/)[1]);
         
-        var targetScale = viewportWidth / 800;
+        var scale = viewportWidth / 800;
         
-        if (Math.abs(targetScale - currentScale) > 0.01) {
-          var viewportMetaTag = document.querySelector('meta[name="viewport"]');
-          if (viewportMetaTag) {
-            viewportMetaTag.content = 'width=device-width, initial-scale=' + targetScale;
-          }
+        var viewportMetaTag = document.querySelector('meta[name="viewport"]');
+        if (viewportMetaTag) {
+          viewportMetaTag.content = 'width=device-width, initial-scale=' + scale;
         }
       }
 
-      window.onload = window.onresize = setViewport;
+      window.onload = setViewport;
     </script>
     <style>
       body {
@@ -43,6 +40,7 @@
       #title {
         font-size: 24px;
         margin-bottom: 20px;
+        color: white;
       }
 
       #button-container {
