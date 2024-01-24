@@ -13,16 +13,16 @@
     <script>
       function setViewport() {
         var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-        var viewportMetaTag = document.querySelector('meta[name="viewport"]');
         
         var scale = viewportWidth / 800;
         
+        var viewportMetaTag = document.querySelector('meta[name="viewport"]');
         if (viewportMetaTag) {
-          viewportMetaTag.content = 'width=device-width, initial-scale=' + scale;
+          viewportMetaTag.content = 'width=device-width, initial-scale=' + scale + ', user-scalable=no';
         }
       }
 
-      window.onload = window.onresize = setViewport;
+      window.onload = setViewport;
     </script>
     <style>
       body {
@@ -47,7 +47,7 @@
         display: grid;
         align-items: center;
         max-width: 650px;
-        background-color: white;
+        background-color: #121212;
         padding: 15px;
         border-radius: 10px;
         margin: 8px;
@@ -108,6 +108,47 @@
         color: #d31a3c;
         cursor: pointer
       }
+
+      .above {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        cursor: pointer;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        text-align: center;
+        background-color: #28282b;
+        color: white;
+      }
+
+      .mobile-popup {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        width: 200px;
+        background-color: #121212;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        opacity: 0;
+        transition: opacity 1s;
+      }
+
+      .website-btn {
+          text-decoration: none;
+          display: block;
+          margin-top: 15px;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          text-align: center;
+          background-color: #28282b;
+          color: white;
+      }
     </style>
   </head>
   <script>
@@ -141,6 +182,10 @@
     }
   </script>
   <body>
+    <div id="mobilePopup" class="mobile-popup">
+      <p>Download this app for you device to remove ads and privacy reasons.</p>
+      <a href="https://brave.com/download/" target="_blank" class="website-btn">Brave Browser</a>
+    </div>
     <div id="security" class="main-container">
         <div id="subtitle">Security</div>
         <p>You may need to install this on your browser; I prefer Firefox and Brave Browser.</p>
@@ -177,5 +222,33 @@
         </div>
       </div>
     <footer> © 2024 Znqkl, Github Pages </footer>
+    <script>
+      function showPopup() {
+        var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+
+        if (viewportWidth <= 768) {
+          var popup = document.getElementById('mobilePopup');
+          if (popup) {
+            popup.style.display = 'block';
+            setTimeout(closePopup, 10000);
+            setTimeout(() => {
+              popup.style.opacity = '1';
+            }, 10);
+          }
+        }
+      }
+
+      function closePopup() {
+        var popup = document.getElementById('mobilePopup');
+        if (popup) {
+          popup.style.opacity = '0';
+          setTimeout(() => {
+            popup.style.display = 'none';
+          }, 1000);
+        }
+      }
+
+      window.onload = showPopup;
+    </script>
   </body>
 </html>

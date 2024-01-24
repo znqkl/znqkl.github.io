@@ -11,16 +11,16 @@
     <script>
       function setViewport() {
         var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-        var viewportMetaTag = document.querySelector('meta[name="viewport"]');
         
         var scale = viewportWidth / 800;
         
+        var viewportMetaTag = document.querySelector('meta[name="viewport"]');
         if (viewportMetaTag) {
-          viewportMetaTag.content = 'width=device-width, initial-scale=' + scale;
+          viewportMetaTag.content = 'width=device-width, initial-scale=' + scale + ', user-scalable=no';
         }
       }
 
-      window.onload = window.onresize = setViewport;
+      window.onload = setViewport;
     </script>
     <style>
       body {
@@ -33,6 +33,51 @@
         height: 100vh;
         background-color: black;
         font-family: Arial, sans-serif;
+      }
+
+      .above {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        cursor: pointer;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        text-align: center;
+        background-color: #28282b;
+        color: white;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .mobile-popup {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        width: 200px;
+        background-color: #121212;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        opacity: 0;
+        transition: opacity 1s;
+      }
+
+      .website-btn {
+          text-decoration: none;
+          display: block;
+          margin-top: 15px;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          text-align: center;
+          background-color: #28282b;
+          color: white;
       }
     </style>
   </head>
@@ -67,6 +112,38 @@
     }
   </script>
   <body>
+    <div id="mobilePopup" class="mobile-popup">
+      <p>Download this app for you device to remove ads and privacy reasons.</p>
+      <a href="https://brave.com/download/" target="_blank" class="website-btn">Brave Browser</a>
+    </div>
     <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=D300C0&random=false&width=495&lines=We+all+know+what+it+is.;It's+the+almighty+https%3A%2F%2Ftheporndude.com" alt="Typing SVG" /></a>
+    <script>
+      function showPopup() {
+        var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+
+        if (viewportWidth <= 768) {
+          var popup = document.getElementById('mobilePopup');
+          if (popup) {
+            popup.style.display = 'block';
+            setTimeout(closePopup, 10000);
+            setTimeout(() => {
+              popup.style.opacity = '1';
+            }, 10);
+          }
+        }
+      }
+
+      function closePopup() {
+        var popup = document.getElementById('mobilePopup');
+        if (popup) {
+          popup.style.opacity = '0';
+          setTimeout(() => {
+            popup.style.display = 'none';
+          }, 1000);
+        }
+      }
+
+      window.onload = showPopup;
+    </script>
   </body>
 </html>
