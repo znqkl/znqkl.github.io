@@ -14,7 +14,8 @@
       function setViewport() {
         var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
         
-        var scale = viewportWidth / 800;
+        // Adjust the scale based on your requirements
+        var scale = viewportWidth / 800; // Adjust 800 based on your design
         
         var viewportMetaTag = document.querySelector('meta[name="viewport"]');
         if (viewportMetaTag) {
@@ -22,6 +23,7 @@
         }
       }
 
+      // Call the function on page load
       window.onload = setViewport;
     </script>
     <style>

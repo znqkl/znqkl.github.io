@@ -13,16 +13,14 @@
     <script>
       function setViewport() {
         var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+        var viewportMetaTag = document.querySelector('meta[name="viewport"]');
         
         var scale = viewportWidth / 800;
         
-        var viewportMetaTag = document.querySelector('meta[name="viewport"]');
         if (viewportMetaTag) {
           viewportMetaTag.content = 'width=device-width, initial-scale=' + scale + ', user-scalable=no';
         }
       }
-
-      window.onload = setViewport;
     </script>
     <style>
       body {
@@ -308,6 +306,8 @@
           }
         }
 
+        
+
         function closePopup() {
           var popup = document.getElementById('mobilePopup');
           if (popup) {
@@ -318,7 +318,10 @@
           }
         }
 
-        window.onload = showPopup;
+        window.onload = function() {
+          setViewport();
+          showPopup();
+        };
     </script>
   </body>
 </html>

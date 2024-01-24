@@ -13,16 +13,14 @@
     <script>
       function setViewport() {
         var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+        var viewportMetaTag = document.querySelector('meta[name="viewport"]');
         
         var scale = viewportWidth / 800;
         
-        var viewportMetaTag = document.querySelector('meta[name="viewport"]');
         if (viewportMetaTag) {
           viewportMetaTag.content = 'width=device-width, initial-scale=' + scale + ', user-scalable=no';
         }
       }
-
-      window.onload = setViewport;
     </script>
     <style>
       body {
@@ -224,31 +222,36 @@
     <footer> © 2024 Znqkl, Github Pages </footer>
     <script>
       function showPopup() {
-        var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+          var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
 
-        if (viewportWidth <= 768) {
-          var popup = document.getElementById('mobilePopup');
-          if (popup) {
-            popup.style.display = 'block';
-            setTimeout(closePopup, 10000);
-            setTimeout(() => {
-              popup.style.opacity = '1';
-            }, 10);
+          if (viewportWidth <= 768) {
+            var popup = document.getElementById('mobilePopup');
+            if (popup) {
+              popup.style.display = 'block';
+              setTimeout(closePopup, 10000);
+              setTimeout(() => {
+                popup.style.opacity = '1';
+              }, 10);
+            }
           }
         }
-      }
 
-      function closePopup() {
-        var popup = document.getElementById('mobilePopup');
-        if (popup) {
-          popup.style.opacity = '0';
-          setTimeout(() => {
-            popup.style.display = 'none';
-          }, 1000);
+        
+
+        function closePopup() {
+          var popup = document.getElementById('mobilePopup');
+          if (popup) {
+            popup.style.opacity = '0';
+            setTimeout(() => {
+              popup.style.display = 'none';
+            }, 1000);
+          }
         }
-      }
 
-      window.onload = showPopup;
+        window.onload = function() {
+          setViewport();
+          showPopup();
+        };
     </script>
   </body>
 </html>
