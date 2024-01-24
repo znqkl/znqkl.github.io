@@ -157,8 +157,7 @@
         <div class="container">
             <div id="commit-info">
                 <h2>Latest Commit</h2>
-                <p><strong>Title:</strong> <span id="commit-title"></span></p>
-                <p><strong>Description:</strong> <span id="commit-description"></span></p>
+                <p><strong>Info:</strong> <span id="commit-title"></span></p>
             </div>
         </div>
       </div>
@@ -172,10 +171,8 @@
             .then(response => response.json())
             .then(data => {
                 const commitTitle = data.commit.message;
-                const commitDescription = data.commit.committer.date;
     
                 document.getElementById('commit-title').innerText = commitTitle;
-                document.getElementById('commit-description').innerText = commitDescription;
             })
             .catch(error => console.error('Error fetching commit information:', error));
     </script>
