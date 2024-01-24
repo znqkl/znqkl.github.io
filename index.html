@@ -14,8 +14,7 @@
       function setViewport() {
         var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
         
-        // Adjust the scale based on your requirements
-        var scale = viewportWidth / 800; // Adjust 800 based on your design
+        var scale = viewportWidth / 800;
         
         var viewportMetaTag = document.querySelector('meta[name="viewport"]');
         if (viewportMetaTag) {
@@ -23,7 +22,6 @@
         }
       }
 
-      // Call the function on page load
       window.onload = setViewport;
     </script>
     <style>
@@ -131,6 +129,7 @@
       <button class="button" onclick="window.location.href='p/web'">Weblist</button>
       <button class="button" onclick="window.location.href='p/sec'">Security</button>
       <button class="button" onclick="window.location.href='p/li'">Special</button>
+      <button class="button" onclick="window.location.href='p/u'">Updates</button>
     </div>
     <footer> © 2024 Znqkl, Github Pages </footer>
   </body>
