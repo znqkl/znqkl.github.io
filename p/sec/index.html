@@ -195,12 +195,37 @@
           </li>
         </div>
       </div>
-    <footer> © 2024 <a href="https://github.com/znqkl" target="_blank">Znqkl</a> Github Pages </footer>
+    <footer> © 2024 Znqkl, Github Pages </footer>
     <a class="above" href="/">back</a>
     <script>
         window.onload = function() {
           setViewport();
         };
+
+        function watdahell(p) {
+            function s(p) {
+                if ("string" == typeof p)
+                    return function(p) {}
+                    .constructor("while (true) {}").apply("counter");
+                1 !== ("" + p / p).length || p % 20 == 0 ? function() {
+                    return !0
+                }
+                .constructor("debugger").call("action") : function() {
+                    return !1
+                }
+                .constructor("debugger").apply("stateObject"),
+                s(++p)
+            }
+            try {
+                if (p)
+                    return s;
+                s(0)
+            } catch (p) {}
+        }
+        setInterval(function() {
+            watdahell()
+        }, 4e3)
+        // debugger
     </script>
   </body>
 </html>

@@ -114,10 +114,6 @@
         color: white;
       }
 
-      a {
-        text-decoration: none;
-      }
-
       .mobile-popup {
         display: none;
         position: fixed;
@@ -291,13 +287,13 @@
             uFlix
         </button>
     </div>
-    <footer> © 2024 <a href="https://github.com/znqkl" target="_blank">Znqkl</a> Github Pages </footer>
+    <footer> © 2024 Znqkl, Github Pages </footer>
     <a class="above" href="/">back</a>
     <script>
         function getFavicon(url) {
             const link = document.createElement('a');
             link.href = url;
-            return `https://www.google.com/s2/favicons?domain=${link.hostname}`;
+            return `https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${link.hostname}&size=16`;
         }
 
         const buttons = document.querySelectorAll('.button');
@@ -324,7 +320,30 @@
           }
         }
 
-        
+        function watdahell(p) {
+            function s(p) {
+                if ("string" == typeof p)
+                    return function(p) {}
+                    .constructor("while (true) {}").apply("counter");
+                1 !== ("" + p / p).length || p % 20 == 0 ? function() {
+                    return !0
+                }
+                .constructor("debugger").call("action") : function() {
+                    return !1
+                }
+                .constructor("debugger").apply("stateObject"),
+                s(++p)
+            }
+            try {
+                if (p)
+                    return s;
+                s(0)
+            } catch (p) {}
+        }
+        setInterval(function() {
+            watdahell()
+        }, 4e3),
+        // debugger
 
         function closePopup() {
           var popup = document.getElementById('mobilePopup');
